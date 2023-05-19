@@ -4,10 +4,12 @@ import {Grid,Image} from 'semantic-ui-react';
 import {useSelector} from "react-redux";
 const ProductComponent = () =>{
     const products = useSelector((state)=>state.allProducts.products);
+    console.log("latest98",products);
     const renderList = products.map((product)=>{
         const{id,title,image,price,category}=product;
         return (
-            <div className="four column wide grid" key={id}>
+            <div className="four wide column" key={id}>
+                
                 <Link to={`/product/${id}`}>
                 <div className="ui link cards">
                     <div className="card">
